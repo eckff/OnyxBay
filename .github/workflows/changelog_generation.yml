@@ -8,7 +8,6 @@ on:
 jobs:
   CompileCL:
     runs-on: ubuntu-latest
-    if: github.repository == 'ChaoticOnyx/OnyxBay' # to prevent this running on forks
     steps:
       - name: Checkout
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
@@ -32,4 +31,4 @@ jobs:
           git config --local user.email "${{ secrets.BOT_EMAIL }}"
           git config --local user.name "$${{ secrets.BOT_NAME }}"
           git commit -m "Automatic changelog generation" -a
-          git push https://${{ secrets.BOT_TOKEN }}:x-oauth-basic@github.com/ChaoticOnyx/OnyxBay.git dev
+          git push https://${{ secrets.BOT_TOKEN }}:x-oauth-basic@github.com/ChaoticOnyx/OnyxBay.git changelog-test
